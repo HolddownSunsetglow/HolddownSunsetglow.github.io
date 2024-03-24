@@ -22,7 +22,7 @@
 
   
 
-  <title>Hexo</title>
+  <title>linux应急响应01 | Hexo</title>
 
   
 
@@ -99,17 +99,12 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap"></h1>
+          <h1 class="title-wrap">linux应急响应01</h1>
           <h2 class="title-sub-wrap">
             <strong>John Doe</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2024-03-24T05:43:13.741Z" itemprop="datePublished">2024-03-24</time>
+            <time  class="article-date" datetime="2024-03-24T05:56:32.000Z" itemprop="datePublished">2024-03-24</time>
           </h2>
-          
-            <h2 class="last-time">
-              <span>最后更新于</span>
-              <time  class="article-updated" datetime="2024-03-22T12:41:26.456Z" itemprop="dateUpdated">2024-03-22</time>
-            </h2>
           
           
           <ul class="wrap-list dark">
@@ -154,10 +149,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">history</span></span><br></pre></td></tr></table></figure>
 
 <p>发现了</p>
-<p><img src="/img/image-20240321165931949.png" alt="image-20240321165931949"></p>
+<p><img src="/2024/03/24/linux%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%9401/image-20240321165931949.png" alt="image-20240321165931949"></p>
 <p>于是我查看rc.local文件</p>
 <p>又找到一个flag</p>
-<p><img src="/img/image-20240321170023181.png" alt="image-20240321170023181"></p>
+<p><img src="/2024/03/24/linux%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%9401/image-20240321170023181.png" alt="image-20240321170023181"></p>
 <p>又偷学的一条命令。哦，两条</p>
 <ol>
 <li>统计爆破主机root账号的失败次数及ip：</li>
@@ -168,14 +163,14 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">&quot;Accepted &quot;</span> /var/log/secure | awk <span class="string">&#x27;&#123;print $1,$2,$3,$9,$11&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <p>成功找到了攻击者ip</p>
-<p><img src="/img/image-20240321170225426.png" alt="image-20240321170225426"></p>
+<p><img src="/2024/03/24/linux%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%9401/image-20240321170225426.png" alt="image-20240321170225426"></p>
 <p>最后还差一个flag</p>
 <p>思考中。。。</p>
 <p>问了大佬 才知道</p>
 <p>flag{P@ssW0rd_redis}</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo $PATH</span><br><span class="line">rpm -Vf /usr/bin/*</span><br></pre></td></tr></table></figure>
 
-<p><img src="/img/image-20240321172521931.png" alt="image-20240321172521931"></p>
+<p><img src="/2024/03/24/linux%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%9401/image-20240321172521931.png" alt="image-20240321172521931"></p>
 <p>大佬后面还分析了一波redis未授权漏洞</p>
 <p>只能狠狠地佩服了</p>
 <p><a target="_blank" rel="noopener" href="https://lusensec.gitee.io/2024/03/21/Emergency-Linux-web1/">https://lusensec.gitee.io/2024/03/21/Emergency-Linux-web1/</a></p>
